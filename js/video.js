@@ -95,6 +95,7 @@ function muteAndUnmute() {
 
 function adjustSlider() {
     var volumeValue = this.value;
+    console.log('The current value is ' + video.volume);
     video.volume = volumeValue / 100;
     var volumeInfo = document.getElementById("volume");
     volumeInfo.textContent = volumeValue + "%";
