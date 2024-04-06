@@ -29,7 +29,7 @@ window.addEventListener("load", function() {
 	document.getElementById("mute").addEventListener("click", muteAndUnmute);
 
     //Change the volume based on the slider and update the volume information.
-    document.getElementById("slider").addEventListener("input", adjustSlider);
+    document.getElementById("slider").addEventListener("change", adjustSlider);
 
     //Utilize the existing oldSchool class on the video element
     document.getElementById('vintage').addEventListener('click', makeVintage);
@@ -94,11 +94,10 @@ function muteAndUnmute() {
 }
 
 function adjustSlider() {
-    var volumeValue = this.value;
+    var volumeValue = document.querySelector('#slider').value;
     console.log('The current value is ' + video.volume);
     video.volume = volumeValue / 100;
-    var volumeInfo = document.getElementById("volume");
-    volumeInfo.textContent = volumeValue + "%";
+    document.querySelector('#volume').textContent = volumeValue + "%";
     console.log('The current value is ' + video.volume);
 }
 
